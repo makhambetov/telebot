@@ -1,0 +1,25 @@
+# Your personal GitHub token
+github_token: a0f3f0f4b9ec3fd3dcf58f798420e8611f681092
+# Read more: https://github.com/blog/1509-personal-api-tokens
+# You can generate it here: https://github.com/settings/tokens
+
+# Guest OS timezone
+timezone: Asia/Almaty
+
+# Are we need check box updates for every 'vagrant up'?
+box_check_update: false
+
+# Virtual machine name
+machine_name: Telebot
+
+# Virtual machine IP
+ip: 192.168.83.173
+
+# Virtual machine CPU cores number
+cpus: 1
+
+# Virtual machine RAM
+memory: 512
+
+#Landing repo password
+landing_repo:
