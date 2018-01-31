@@ -4,36 +4,44 @@
 /* @var $form yii\bootstrap\ActiveForm */
 /* @var $model \common\models\LoginForm */
 
+use frontend\assets\LoginPageAsset;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
+LoginPageAsset::register($this);
 $this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Please fill out the following fields to login:</p>
 
     <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+        <div class="col-md-offset-4 col-lg-offset-4 col-xs-offset-0">
+            <div class="block">
+                <p>Вход в систему</p>
+                <?php $form = ActiveForm::begin([
+                    'id' => 'login-form',
+                    'fieldConfig' => [
+                        'options' => [
+                            'tag' => false,
+                            ]
+                    ]
+                ]); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+                <?= $form->field($model, 'username', ['template' => "{input}"])
+                    ->textInput(['autofocus' => true, 'class' => 'input', 'placeholder' => 'Username']) ?>
 
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'password', ['template' => "{input}"])->passwordInput(['class' => 'input', 'placeholder' => 'Password'])->label(false) ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+                <?= Html::submitButton('Войти', ['class' => 'login-btn', 'name' => 'login-button']) ?>
 
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
-                </div>
+                <?= $form->field($model, 'rememberMe')->checkbox(['class' => 'chkb', 'template' => "{input}"])->label(false) ?>
+                Запомнить
 
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
+                <?= Html::a('Забыли пароль?', ['site/request-password-reset'], ['class' => 'forgot']) ?>
 
-            <?php ActiveForm::end(); ?>
+
+
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
 </div>

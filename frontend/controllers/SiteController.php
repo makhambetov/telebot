@@ -82,13 +82,16 @@ class SiteController extends Controller
      */
     public function actionLogin()
     {
-        Yii::$app->controller->layout = '@frontend/views/layouts/login.php';
+        //Yii::$app->controller->layout = '@frontend/views/layouts/login.php';
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
         $model = new LoginForm();
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+        if ($model->load(Yii::$app->request->post())) {
+            if (!$model->login()){
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Name or password incorrect'));
+            }
             return $this->goBack();
         } else {
             return $this->render('login', [
@@ -212,14 +215,14 @@ class SiteController extends Controller
         ]);
     }
 
-    public function beforeAction($action)
+    /*public function beforeAction($action)
     {
         if (Yii::$app->user->isGuest){
-            //$this->redirect(Yii::$app->params['landing']);
+            //$this->redirect(Yii::$app->params['landing_url']);
             //$this->redirect('site/login');
             //$this->layout = '@app/views/layouts/landing/telebot_landing/index.php';
             //$bundle = $this->view->registerAssetBundle('frontend\assets\LandingAsset');
         }
         return parent::beforeAction($action);
-    }
+    }*/
 }
