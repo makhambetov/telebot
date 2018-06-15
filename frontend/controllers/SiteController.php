@@ -29,9 +29,9 @@ class SiteController extends Controller
                 //'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup', 'login'],
+                        'actions' => ['login', 'request-password-reset', 'reset-password'],
                         'allow' => true,
-                        //'roles' => ['?'],
+                        'roles' => ['?'],
                     ],
                     [
                         'actions' => ['logout', 'index'],

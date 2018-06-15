@@ -12,9 +12,28 @@ LoginPageAsset::register($this);
 $this->title = 'Login';
 ?>
 <div class="site-login">
-
+   <!-- <style>
+        .bbb{
+            border: red solid 1px;
+            height: 30px;
+        }
+    </style>
+<div class="row">
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+    <div class="col-md-1 col-sm-1 col-xs-1 bbb"></div>
+</div>-->
     <div class="row">
-        <div class="col-md-offset-4 col-lg-offset-4 col-xs-offset-0">
+        <div class="col-md-1 col-md-offset-4 col-sm-offset-3 col-lg-offset-4 col-xs-offset-0">
             <div class="block">
                 <p>Вход в систему</p>
                 <?php $form = ActiveForm::begin([

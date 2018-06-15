@@ -73,7 +73,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Telebot.kz <?= date('Y') ?></p>
+        <p class="center-block">&copy; Telebot.kz <?= date('Y') ?></p>
     </div>
 </footer>
 
